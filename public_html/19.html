@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="notesApp">
+    <head>
+        <title>Hello AngularJS</title>
+    </head>
+    <body ng-controller="MainCtrl as ctrl">
+        <div>
+            <select ng-model="ctrl.location">
+                <option value="USA">USA</option>
+                <option value="India">India</option>
+                <option value="Other">None of the above</option>
+            </select>
+        </div>
+        <script src="js/angular.min.js"></script>
+        <script type="text/javascript">
+    angular.module('notesApp', [])
+            .controller('MainCtrl', [function() {
+                    this.location = 'India';
+                }]);
+        </script>
+    </body>
+</html>

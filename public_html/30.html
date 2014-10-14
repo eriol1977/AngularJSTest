@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>AngularJS Routing</title>
+        <script
+            src="js/angular.min.js">
+        </script>
+        <script
+            src="js/angular-route.min.js">
+        </script>
+    </head>
+    <body ng-app="routingApp">
+        <h2>AngularJS Routing Application</h2>
+        <ul>
+            <li><a href="#/">Default Route</a></li>
+            <li><a href="#/second">Second Route</a></li>
+            <li><a href="#/asdasdasd">Nonexistent Route</a></li>
+            <li><a href="#/test">Test</a></li>
+            <li><a href="#/detail/1234?q=blablabla">With parameter</a></li>
+        </ul>
+        <div ng-view></div>
+        <script type="text/javascript">
+            angular.module('routingApp', ['ngRoute'])
+                    .config(['$routeProvider', function($routeProvider) {
+                                $routeProvider.when('/', {
+                                    template: '<h5>This is the default route</h5>'
+                                })
+                                .when('/second', {
+                                    template: '<h5>This is the second route</h5>'
+                                })
+                                .when('/test', {
+                                    template: '<h5>Test Route</h5>',
+                                    controller: ['$window', function($window) {
+                                            $window.alert('Test route has been loaded!');
+                                        }],
+                                    controllerAs: 'ctrl'})
+                                .when('/detail/:detId', {
+                                    template: '<h5>Loaded {{myCtrl.detailId}}' +
+                                            ' and query String is {{myCtrl.qStr}}</h5>',
+                                    controller: ['$routeParams', function($routeParams) {
+                                            this.detailId = $routeParams.detId;
+                                            this.qStr = $routeParams.q;
+                                        }],
+                                    controllerAs: 'myCtrl'
+                                })
+                                .otherwise({redirectTo: '/'});
+                        }]);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="notesApp">
+    <head>
+        <title>Hello AngularJS</title>
+    </head>
+    <body ng-controller="MainCtrl as ctrl">
+        <button ng-click="ctrl.changeNotes()">Change Notes</button>
+        
+        <br/>
+        DOM elements change every time someone clicks
+        <div ng-repeat="note in ctrl.notes1">
+            <span class="label">{{note.label}}</span>
+            (hashkey: {{note.$$hashKey}})
+        </div>
+        
+        <br/>
+        DOM elements are reused every time someone clicks
+        <div ng-repeat="note in ctrl.notes2 track by note.id">
+            <span class="label">{{note.label}}</span>
+            (hashkey: {{note.$$hashKey}})
+        </div>
+        
+        <script src="js/angular.min.js"></script>
+        <script type="text/javascript">
+            angular.module('notesApp',[])
+                    .controller('MainCtrl',[function(){
+                            var self = this;
+                            var notes = [
+                                {
+                                    id: 1,
+                                    label: 'First Note',
+                                    done: false,
+                                    someRandom: 31431
+                                },
+                                {
+                                    id: 2,
+                                    label: 'Second Note',
+                                    done: false
+                                },
+                                {
+                                    id: 3,
+                                    label: 'Third note',
+                                    done: true
+                                }
+                            ];
+                            self.notes1 = angular.copy(notes);
+                            self.notes2 = angular.copy(notes);
+                            self.changeNotes = function() {
+                                notes = [
+                                    {
+                                    id: 1,
+                                    label: 'Changed Note',
+                                    done: false,
+                                    someRandom: 4242
+                                    },
+                                    {
+                                        id: 2,
+                                        label: 'Second Note',
+                                        done: false
+                                    },
+                                    {
+                                        id: 3,
+                                        label: 'Third note',
+                                        done: true
+                                    }
+                                ];
+                                self.notes1 = angular.copy(notes);
+                                self.notes2 = angular.copy(notes);
+                            };
+                    }]);
+        </script>
+    </body>
+</html>

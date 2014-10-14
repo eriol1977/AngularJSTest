@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="notesApp">
+    <head>
+        <title>Hello AngularJS</title>
+    </head>
+    <body ng-controller="MainCtrl as ctrl">
+        <div ng-repeat="note in ctrl.notes">
+            <span class="label"><b>{{note.label}}</b></span>
+            <div>First element: {{$first}}</div>
+            <div>Middle element: {{$middle}}</div>
+            <div>Last element: {{$last}}</div>
+            <div>Index of element: {{$index}}</div>
+            <div>At even position: {{$even}}</div>
+            <div>At odd position: {{$odd}}</div>
+            <br/>
+        </div>
+        <script src="js/angular.min.js"></script>
+        <script type="text/javascript">
+            angular.module('notesApp',[])
+                    .controller('MainCtrl',[function(){
+                            var self = this;
+                            self.notes = [
+                                {id:1,label:'First note',done:false},
+                                {id:2,label:'Second note',done:false},
+                                {id:3,label:'Done note',done:true},
+                                {id:4,label:'Last note',done:false}
+                            ];
+                    }]);
+        </script>
+    </body>
+</html>

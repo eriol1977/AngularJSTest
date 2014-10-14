@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!-- File: chapter4/select-example.html -->
+<html ng-app="notesApp">
+    <head><title>Notes App</title></head>
+    <body ng-controller="MainCtrl as ctrl">
+        <div>
+            <select ng-model="ctrl.selectedCountry"
+                    ng-options="c.label group by c.continent for c in ctrl.countries">
+            </select>
+            Selected Country : {{ctrl.selectedCountry}}
+        </div>
+        <script
+            src="js/angular.min.js">
+        </script>
+        <script type="text/javascript">
+                    angular.module('notesApp', [])
+                    .controller('MainCtrl', [function() {
+                        this.countries = [
+                                {label: 'USA', id: 1, continent: 'America'},
+                                {label: 'India', id: 2, continent: 'Asia'},
+                                {label: 'Other', id: 3, continent: 'Unknown'},
+                                {label: 'Brazil', id: 4, continent: 'America'},
+                                {label: 'Mexico', id: 5, continent: 'America'},
+                                {label: 'China', id: 6, continent: 'Asia'}
+                        ];
+                    }]);</script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="notesApp">
+    <head>
+        <title>Notes App</title>
+        <style>
+            .username.ng-valid{
+                background-color: green;
+            }
+            .username.ng-dirty.ng-invalid-required {
+                background-color: red;
+            }
+            .username.ng-dirty.ng-invalid-minlength {
+                background-color: lightpink;
+            }
+        </style>
+    </head>
+    <body ng-controller="MainCtrl as ctrl">
+        <form ng-submit="ctrl.submit()" name="myform">
+            <input type="text" name="uname" class="username" ng-model="ctrl.user.username" required ng-minlength="4"/>
+            <div ng-show="myform.uname.$error.required">This is a required field</div>
+            <div ng-show="myform.uname.$error.minlength">Minimum length required is 4</div>
+            <div ng-show="myform.uname.$invalid">This field is invalid</div>
+            <input type="password" name="pwd" ng-model="ctrl.user.password" required/>
+            <div ng-show="myform.pwd.$error.required">This is a required field</div>
+            <input type="submit" value="Submit" ng-disabled="myform.$invalid"/>
+        </form>
+        <script src="js/angular.min.js"></script>
+        <script type="text/javascript">
+            angular.module('notesApp',[])
+                    .controller('MainCtrl',[function(){
+                            var self = this;
+                            self.submit = function(){
+                                console.log('User clicked submit with ', self.user);
+                            };
+                    }]);
+        </script>
+    </body>
+</html>

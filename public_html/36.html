@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stock Market App</title>
+    </head>
+    <body ng-app="stockMarketApp">
+        <div ng-controller="MainCtrl as mainCtrl">
+            <h3>List of Stocks</h3>
+            <div ng-repeat="s in mainCtrl.stocks">
+                <div stock-widget
+                     stock-data="s"
+                     stock-title="Stock {{$index}}. {{s.name}}"
+                     when-select="mainCtrl.onStockSelect(stockPrice, stockName)"></div>
+            </div>
+        </div>
+        <script src="js/angular.min.js"></script>
+        <script type="text/javascript">
+                        angular.module('stockMarketApp', [])
+                        .controller('MainCtrl', ['$window', function($window) {
+                        var self = this;
+                                self.stocks = [
+                                {name: 'First Stock', price: 100, previous: 220},
+                                {name: 'Second Stock', price: 140, previous: 120},
+                                {name: 'Third Stock', price: 110, previous: 110},
+                                {name: 'Fourth Stock', price: 400, previous: 420}
+                                ];
+                                self.getChange = function(stock) {
+                                    return Math.ceil((
+                                        (stock.price - stock.previous) / stock.previous) * 100);
+                                };
+                                self.onStockSelect = function(price, name) {
+                                    $window.alert('Selected Price: ' + price + '; Name: ' + name);
+                                };
+                        }])
+                        .directive('stockWidget', [function() {
+                        return {
+                        templateUrl: 'view/stock4.html',
+                                restrict: 'AE',
+                                scope: {
+                                    stockData: '=',
+                                    stockTitle: '@',
+                                    whenSelect: '&'
+                                },
+                                link: function($scope, $element, $attrs) {
+                                $scope.getChange = function(stock) {
+                                    return Math.ceil(((stock.price - stock.previous) / stock.previous) * 100);
+                                };
+                                $scope.onSelect = function() {
+                                    $scope.whenSelect({
+                                        stockName: $scope.stockData.name,
+                                        stockPrice: $scope.stockData.price,
+                                        stockPrevious: $scope.stockData.previous
+                                    });
+                                };
+                                }
+                        }}]);
+        </script>
+    </body>
+</html>

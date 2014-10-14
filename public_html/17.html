@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="notesApp">
+    <head>
+        <title>Hello AngularJS</title>
+    </head>
+    <body ng-controller="MainCtrl as ctrl">
+        <div>
+            <h2>What are your favorite sports?</h2>
+            <div ng-repeat="sport in ctrl.sports">
+                <label ng-bind="sport.label" style="font-weight: bold"></label>
+                <div>
+                    With binding:
+                    <input type="checkbox" ng-model="sport.selected" ng-true-value="YES" ng-false-value="NO"/>
+                </div>
+                <div>
+                    Using ng-checked:
+                    <input type="checkbox" ng-checked="sport.selected === 'YES'"/>
+                </div>
+                <div>
+                    Current state: {{sport.selected}}
+                </div>
+                <br/>
+            </div>
+        </div>
+        <script src="js/angular.min.js"></script>
+        <script type="text/javascript">
+            angular.module('notesApp',[])
+                    .controller('MainCtrl',[function(){
+                            var self = this;
+                            self.sports = [
+                                {label: 'Basketball', selected: 'YES'},
+                                {label: 'Cricket', selected: 'NO'},
+                                {label: 'Soccer', selected: 'YES'},
+                                {label: 'Swimming', selected: 'NO'}
+                            ];
+                    }]);
+        </script>
+    </body>
+</html>

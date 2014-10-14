@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="notesApp">
+    <head>
+        <title>Hello AngularJS</title>
+    </head>
+    <body ng-controller="MainCtrl">
+        Hello {{1 + 1}}nd time AngularJS!
+        <script src="js/angular.min.js"></script>
+        <script type="text/javascript">
+            angular.module('notesApp',[])
+                    .controller('MainCtrl',[function(){
+                            console.log('MainCtrl has been created');
+                    }]);
+        </script>
+    </body>
+</html>

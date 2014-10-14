@@ -1,0 +1,228 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\dev\\server\\nodejs\\\\node.exe',
+1 verbose cli   'D:\\dev\\server\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink D:\dev\server\nodejs\\node.exe
+5 warn package.json angularjs-chapter6-server@ No description
+6 warn package.json angularjs-chapter6-server@ No repository field.
+7 warn package.json angularjs-chapter6-server@ No README data
+8 verbose readDependencies using package.json deps
+9 verbose install where, deps [ 'C:\\Users\\Francesco\\Documents\\NetBeansProjects\\AngularTest\\public_html\\chapter6',
+9 verbose install   [ 'express', 'morgan', 'body-parser', 'method-override' ] ]
+10 info preinstall angularjs-chapter6-server@
+11 verbose readDependencies using package.json deps
+12 verbose cache add [ 'express@~4.0.0', null ]
+13 verbose cache add name=undefined spec="express@~4.0.0" args=["express@~4.0.0",null]
+14 verbose parsed url { protocol: null,
+14 verbose parsed url   slashes: null,
+14 verbose parsed url   auth: null,
+14 verbose parsed url   host: null,
+14 verbose parsed url   port: null,
+14 verbose parsed url   hostname: null,
+14 verbose parsed url   hash: null,
+14 verbose parsed url   search: null,
+14 verbose parsed url   query: null,
+14 verbose parsed url   pathname: 'express@~4.0.0',
+14 verbose parsed url   path: 'express@~4.0.0',
+14 verbose parsed url   href: 'express@~4.0.0' }
+15 verbose cache add [ 'morgan@~1.0.0', null ]
+16 verbose cache add name=undefined spec="morgan@~1.0.0" args=["morgan@~1.0.0",null]
+17 verbose parsed url { protocol: null,
+17 verbose parsed url   slashes: null,
+17 verbose parsed url   auth: null,
+17 verbose parsed url   host: null,
+17 verbose parsed url   port: null,
+17 verbose parsed url   hostname: null,
+17 verbose parsed url   hash: null,
+17 verbose parsed url   search: null,
+17 verbose parsed url   query: null,
+17 verbose parsed url   pathname: 'morgan@~1.0.0',
+17 verbose parsed url   path: 'morgan@~1.0.0',
+17 verbose parsed url   href: 'morgan@~1.0.0' }
+18 verbose cache add [ 'body-parser@~1.0.0', null ]
+19 verbose cache add name=undefined spec="body-parser@~1.0.0" args=["body-parser@~1.0.0",null]
+20 verbose parsed url { protocol: null,
+20 verbose parsed url   slashes: null,
+20 verbose parsed url   auth: null,
+20 verbose parsed url   host: null,
+20 verbose parsed url   port: null,
+20 verbose parsed url   hostname: null,
+20 verbose parsed url   hash: null,
+20 verbose parsed url   search: null,
+20 verbose parsed url   query: null,
+20 verbose parsed url   pathname: 'body-parser@~1.0.0',
+20 verbose parsed url   path: 'body-parser@~1.0.0',
+20 verbose parsed url   href: 'body-parser@~1.0.0' }
+21 verbose cache add [ 'method-override@~1.0.0', null ]
+22 verbose cache add name=undefined spec="method-override@~1.0.0" args=["method-override@~1.0.0",null]
+23 verbose parsed url { protocol: null,
+23 verbose parsed url   slashes: null,
+23 verbose parsed url   auth: null,
+23 verbose parsed url   host: null,
+23 verbose parsed url   port: null,
+23 verbose parsed url   hostname: null,
+23 verbose parsed url   hash: null,
+23 verbose parsed url   search: null,
+23 verbose parsed url   query: null,
+23 verbose parsed url   pathname: 'method-override@~1.0.0',
+23 verbose parsed url   path: 'method-override@~1.0.0',
+23 verbose parsed url   href: 'method-override@~1.0.0' }
+24 verbose cache add name="express" spec="~4.0.0" args=["express","~4.0.0"]
+25 verbose parsed url { protocol: null,
+25 verbose parsed url   slashes: null,
+25 verbose parsed url   auth: null,
+25 verbose parsed url   host: null,
+25 verbose parsed url   port: null,
+25 verbose parsed url   hostname: null,
+25 verbose parsed url   hash: null,
+25 verbose parsed url   search: null,
+25 verbose parsed url   query: null,
+25 verbose parsed url   pathname: '~4.0.0',
+25 verbose parsed url   path: '~4.0.0',
+25 verbose parsed url   href: '~4.0.0' }
+26 verbose addNamed [ 'express', '~4.0.0' ]
+27 verbose addNamed [ null, '>=4.0.0-0 <4.1.0-0' ]
+28 verbose cache add name="morgan" spec="~1.0.0" args=["morgan","~1.0.0"]
+29 verbose parsed url { protocol: null,
+29 verbose parsed url   slashes: null,
+29 verbose parsed url   auth: null,
+29 verbose parsed url   host: null,
+29 verbose parsed url   port: null,
+29 verbose parsed url   hostname: null,
+29 verbose parsed url   hash: null,
+29 verbose parsed url   search: null,
+29 verbose parsed url   query: null,
+29 verbose parsed url   pathname: '~1.0.0',
+29 verbose parsed url   path: '~1.0.0',
+29 verbose parsed url   href: '~1.0.0' }
+30 verbose addNamed [ 'morgan', '~1.0.0' ]
+31 verbose addNamed [ null, '>=1.0.0-0 <1.1.0-0' ]
+32 verbose cache add name="body-parser" spec="~1.0.0" args=["body-parser","~1.0.0"]
+33 verbose parsed url { protocol: null,
+33 verbose parsed url   slashes: null,
+33 verbose parsed url   auth: null,
+33 verbose parsed url   host: null,
+33 verbose parsed url   port: null,
+33 verbose parsed url   hostname: null,
+33 verbose parsed url   hash: null,
+33 verbose parsed url   search: null,
+33 verbose parsed url   query: null,
+33 verbose parsed url   pathname: '~1.0.0',
+33 verbose parsed url   path: '~1.0.0',
+33 verbose parsed url   href: '~1.0.0' }
+34 verbose addNamed [ 'body-parser', '~1.0.0' ]
+35 verbose addNamed [ null, '>=1.0.0-0 <1.1.0-0' ]
+36 verbose cache add name="method-override" spec="~1.0.0" args=["method-override","~1.0.0"]
+37 verbose parsed url { protocol: null,
+37 verbose parsed url   slashes: null,
+37 verbose parsed url   auth: null,
+37 verbose parsed url   host: null,
+37 verbose parsed url   port: null,
+37 verbose parsed url   hostname: null,
+37 verbose parsed url   hash: null,
+37 verbose parsed url   search: null,
+37 verbose parsed url   query: null,
+37 verbose parsed url   pathname: '~1.0.0',
+37 verbose parsed url   path: '~1.0.0',
+37 verbose parsed url   href: '~1.0.0' }
+38 verbose addNamed [ 'method-override', '~1.0.0' ]
+39 verbose addNamed [ null, '>=1.0.0-0 <1.1.0-0' ]
+40 silly lockFile 9dcfb469-express-4-0-0 express@~4.0.0
+41 verbose lock express@~4.0.0 C:\Users\Francesco\AppData\Roaming\npm-cache\9dcfb469-express-4-0-0.lock
+42 silly lockFile 58998603-morgan-1-0-0 morgan@~1.0.0
+43 verbose lock morgan@~1.0.0 C:\Users\Francesco\AppData\Roaming\npm-cache\58998603-morgan-1-0-0.lock
+44 silly lockFile 9ca6d1f0-body-parser-1-0-0 body-parser@~1.0.0
+45 verbose lock body-parser@~1.0.0 C:\Users\Francesco\AppData\Roaming\npm-cache\9ca6d1f0-body-parser-1-0-0.lock
+46 silly lockFile 75669156-method-override-1-0-0 method-override@~1.0.0
+47 verbose lock method-override@~1.0.0 C:\Users\Francesco\AppData\Roaming\npm-cache\75669156-method-override-1-0-0.lock
+48 silly addNameRange { name: 'express', range: '>=4.0.0-0 <4.1.0-0', hasData: false }
+49 silly addNameRange { name: 'morgan', range: '>=1.0.0-0 <1.1.0-0', hasData: false }
+50 silly addNameRange { name: 'body-parser',
+50 silly addNameRange   range: '>=1.0.0-0 <1.1.0-0',
+50 silly addNameRange   hasData: false }
+51 silly addNameRange { name: 'method-override',
+51 silly addNameRange   range: '>=1.0.0-0 <1.1.0-0',
+51 silly addNameRange   hasData: false }
+52 verbose request where is /express
+53 verbose request registry https://registry.npmjs.org/
+54 verbose request id dc33ad1eaeccd0e4
+55 verbose url raw /express
+56 verbose url resolving [ 'https://registry.npmjs.org/', './express' ]
+57 verbose url resolved https://registry.npmjs.org/express
+58 verbose request where is https://registry.npmjs.org/express
+59 info trying registry request attempt 1 at 09:00:33
+60 http GET https://registry.npmjs.org/express
+61 verbose request where is /morgan
+62 verbose request registry https://registry.npmjs.org/
+63 verbose url raw /morgan
+64 verbose url resolving [ 'https://registry.npmjs.org/', './morgan' ]
+65 verbose url resolved https://registry.npmjs.org/morgan
+66 verbose request where is https://registry.npmjs.org/morgan
+67 info trying registry request attempt 1 at 09:00:33
+68 http GET https://registry.npmjs.org/morgan
+69 verbose request where is /body-parser
+70 verbose request registry https://registry.npmjs.org/
+71 verbose url raw /body-parser
+72 verbose url resolving [ 'https://registry.npmjs.org/', './body-parser' ]
+73 verbose url resolved https://registry.npmjs.org/body-parser
+74 verbose request where is https://registry.npmjs.org/body-parser
+75 info trying registry request attempt 1 at 09:00:33
+76 http GET https://registry.npmjs.org/body-parser
+77 verbose request where is /method-override
+78 verbose request registry https://registry.npmjs.org/
+79 verbose url raw /method-override
+80 verbose url resolving [ 'https://registry.npmjs.org/', './method-override' ]
+81 verbose url resolved https://registry.npmjs.org/method-override
+82 verbose request where is https://registry.npmjs.org/method-override
+83 info trying registry request attempt 1 at 09:00:33
+84 http GET https://registry.npmjs.org/method-override
+85 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+86 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+87 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+88 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+89 info trying registry request attempt 2 at 09:00:43
+90 http GET https://registry.npmjs.org/express
+91 info trying registry request attempt 2 at 09:00:43
+92 http GET https://registry.npmjs.org/morgan
+93 info trying registry request attempt 2 at 09:00:43
+94 http GET https://registry.npmjs.org/body-parser
+95 info trying registry request attempt 2 at 09:00:43
+96 http GET https://registry.npmjs.org/method-override
+97 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+98 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+99 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+100 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+101 info trying registry request attempt 3 at 09:01:43
+102 http GET https://registry.npmjs.org/express
+103 info trying registry request attempt 3 at 09:01:43
+104 http GET https://registry.npmjs.org/morgan
+105 info trying registry request attempt 3 at 09:01:43
+106 http GET https://registry.npmjs.org/body-parser
+107 info trying registry request attempt 3 at 09:01:43
+108 http GET https://registry.npmjs.org/method-override
+109 silly lockFile 9dcfb469-express-4-0-0 express@~4.0.0
+110 silly lockFile 9dcfb469-express-4-0-0 express@~4.0.0
+111 silly lockFile 58998603-morgan-1-0-0 morgan@~1.0.0
+112 silly lockFile 58998603-morgan-1-0-0 morgan@~1.0.0
+113 silly lockFile 9ca6d1f0-body-parser-1-0-0 body-parser@~1.0.0
+114 silly lockFile 9ca6d1f0-body-parser-1-0-0 body-parser@~1.0.0
+115 silly lockFile 75669156-method-override-1-0-0 method-override@~1.0.0
+116 silly lockFile 75669156-method-override-1-0-0 method-override@~1.0.0
+117 error network getaddrinfo ENOTFOUND
+117 error network This is most likely not a problem with npm itself
+117 error network and is related to network connectivity.
+117 error network In most cases you are behind a proxy or have bad network settings.
+117 error network
+117 error network If you are behind a proxy, please make sure that the
+117 error network 'proxy' config is set properly.  See: 'npm help config'
+118 error System Windows_NT 6.2.9200
+119 error command "D:\\dev\\server\\nodejs\\\\node.exe" "D:\\dev\\server\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+120 error cwd C:\Users\Francesco\Documents\NetBeansProjects\AngularTest\public_html\chapter6
+121 error node -v v0.10.32
+122 error npm -v 1.4.28
+123 error syscall getaddrinfo
+124 error code ENOTFOUND
+125 error errno ENOTFOUND
+126 verbose exit [ 1, true ]
