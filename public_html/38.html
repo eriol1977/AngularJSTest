@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stock Market App</title>
+    </head>
+    <body ng-app="stockMarketApp">
+        <div ng-controller="MainCtrl as mainCtrl">
+            <h3>List of Stocks</h3>
+            <div simple-stock-repeat="mainCtrl.stocks">
+                We found {{stock.name}} at {{currentIndex}}
+                <hr/>
+            </div>
+        </div>
+        <script src="js/angular.min.js">
+        </script>
+        <script src="app.js"></script>
+        <script type="text/javascript">
+                            angular.module('stockMarketApp', [])
+                            .controller('MainCtrl', [function() {
+                            var self = this;
+                                    self.stocks = [
+                                    {name: 'First Stock', price: 100, previous: 220},
+                                    {name: 'Second Stock', price: 140, previous: 120},
+                                    {name: 'Third Stock', price: 110, previous: 110},
+                                    {name: 'Fourth Stock', price: 400, previous: 420}
+                                    ];
+                            }])
+                            .directive('simpleStockRepeat',
+                                    [function() {
+                                    return {
+                                    restrict: 'A',
+                                    // Capture and replace the entire element
+                                    // instead of just its content
+                                    transclude: 'element',
+                                    // A $transclude is passed in as the fifth
+                                    // argument to the link function
+                                    link: function($scope, $element, $attrs, ctrl, $transclude) {
+                                        var myArray = $scope.$eval($attrs.simpleStockRepeat);
+                                        var container = angular.element('<div class="container"></div>');
+                                        for (var i = 0; i < myArray.length; i++) {
+                                        // Create an element instance with a new child
+                                        // scope using the clone linking function
+                                            var instance = $transclude($scope.$new(),
+                                            function(clonedElement, newScope) {
+                                                // Expose custom variables for the instance
+                                                newScope.currentIndex = i;
+                                                newScope.stock = myArray[i];
+                                            });
+                                            // Add it to our container
+                                            container.append(instance);
+                                        }
+                                        // With transclude: 'element', the element gets replaced
+                                        // with a comment. Add our generated content
+                                        // after the comment
+                                        $element.after(container);
+                                    }
+                                    };
+                                    }]);
+        </script>
+    </body>
+</html>

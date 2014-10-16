@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stock Market App</title>
+        <style>
+            input.ng-invalid {
+                background: pink;
+            }
+        </style>
+    </head>
+    <body ng-app="stockMarketApp">
+        <div ng-controller="MainCtrl as mainCtrl">
+            <h3>Zip Code Input</h3>
+            <h5>Zips are allowed in one of the following formats</h5>
+            <ul>
+                <li>12345</li>
+                <li>12345 1234</li>
+                <li>12345-1234</li>
+            </ul>
+            <form novalidate="">
+                Enter valid zip code:
+                <input type="text"
+                       ng-model="mainCtrl.zip"
+                       valid-zip>
+            </form>
+        </div>
+        <script src="js/angular.min.js"></script>
+        <script type="text/javascript">
+                                   angular.module('stockMarketApp', [])
+                                   .controller('MainCtrl', [function() {
+                                        this.zip = '1234';
+                                   }])
+                                   .directive('validZip', [function() {
+                                        var zipCodeRegex = /^\d{5}(?:[-\s]\d{4})?$/g;
+                                        return {
+                                            restrict: 'A',
+                                            require: 'ngModel',
+                                            link: function($scope, $element, $attrs, ngModelCtrl) {
+                                                
+                                                // Handle DOM update --> Model update
+                                                ngModelCtrl.$parsers.unshift(function(value) {
+                                                    var valid = zipCodeRegex.test(value);
+                                                    ngModelCtrl.$setValidity('validZip', valid);
+                                                    return valid ? value : undefined;
+                                                });
+                                                // Handle Model Update --> DOM
+                                                ngModelCtrl.$formatters.unshift(function(value) {
+                                                    ngModelCtrl.$setValidity('validZip',
+                                                        zipCodeRegex.test(value));
+                                                    return value;
+                                                });
+                                            }
+                                        };
+                                   }]); ;
+
+        </script>
+    </body>
+</html>
